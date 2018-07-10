@@ -6,3 +6,9 @@ img{
 .btn{
     margin: 10px 10px 10px 10px;
 }
+
+.icon{
+    margin-top:10px;
+    height: 50px;
+    width: 50px;
+}
