@@ -22,10 +22,19 @@
     
         <div class="well header">
             
-                <h1 class="text-center"><img src="images/logos/logo06.jpg" alt="BookLogo"/>City Urban Book Exchange</h1>
+                <h1 class="text-center"><img src="images/logos/logo01.jpg" alt="BookLogo"/>City Urban Book Exchange</h1>
         </div>
         <br/>
-
+        <div class="row">
+            <div class="col-sm-12 text-center">
+            <div class="well">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis unde minima a amet minus 
+                excepturi accusamus veniam similique, qui fuga obcaecati nostrum dolor eveniet quibusdam odit dolore molestias, 
+                quod rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis unde minima a amet minus 
+                excepturi accusamus veniam similique, qui fuga obcaecati nostrum dolor eveniet quibusdam odit dolore molestias,
+                 quod rem.
+            </div>
+            </div>
+        </div>
 
                 <div class="row">
                     <div class="col-lg-6 text-center">
@@ -47,9 +56,8 @@
                            <!-- <div class="panel-heading"></div>-->
                             <div class="panel-body buttonSection">
                                 <!--{{#each burger}} {{#if this.devoured}}-->
-                                <form action="/burgersdestroy/delete?_method=PUT" method="POST">
+                                <form action="/pickabook.html">
                                     <input type="hidden" type="text" name="burger_id" value={{this.id}}>
-                                    <!--<button type="submit" class='btn btn-warning btn-margin '>{{this.burger_name}}</button>-->
                                     <button type="submit" class='btn btn-warning btn-margin '>Pick a Book</button>
                                 </form>
                                 <!--{{/if}} {{/each}}-->
