@@ -18,7 +18,7 @@ pids
 lib-cov
 
 # Excel Spreadsheets
-# .xlsm
+*.xlsm
 
 # Coverage directory used by tools like istanbul
 coverage

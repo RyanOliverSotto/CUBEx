@@ -32,7 +32,7 @@ module.exports = function (sequelize, DataTypes) {
         //Each book will have a foreign key with GENRE ID
         Book.belongsTo(models.Genre, {
             foreignKey: {
-                allowNull: true
+                allowNull: false
             }
         });
     };
@@ -40,7 +40,7 @@ module.exports = function (sequelize, DataTypes) {
         //Each book will have a foreign key with KIOSK ID
         Book.belongsTo(models.Kiosk, {
             foreignKey: {
-                allowNull: true
+                allowNull: false
             }
         });
     };
