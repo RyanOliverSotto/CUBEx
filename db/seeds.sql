@@ -1,6 +1,7 @@
 ## Populate the kiosk tbl
 
 USE cubex_db;
+INSERT INTO `cubex_db`.`kiosks` (`kiosk`) VALUES ('HUB');
 INSERT INTO `cubex_db`.`kiosks` (`kiosk`) VALUES ('HOWARD');
 INSERT INTO `cubex_db`.`kiosks` (`kiosk`) VALUES ('JARVIS');
 INSERT INTO `cubex_db`.`kiosks` (`kiosk`) VALUES ('MORSE');
