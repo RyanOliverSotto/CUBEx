@@ -41,13 +41,9 @@
                         <div class="panel panel-default">
                             <!--<div class="panel-heading"><h4>Recipes for preparation. Click to eat.</h4></div>-->
                             <div class="panel-body buttonSection">
-                                <!--{{#each burger}} {{#unless this.devoured}}-->
-                                <form action="/addabook.html">
-                                    <input type="hidden" type="text" name="burger_id" value={{this.id}}>
-                                    <!--<button type="submit" class='btn btn-success btn-margin '>{{this.burger_name}}</button>-->
-                                    <button type="submit" class='btn btn-success btn-margin '>Add a Book</button>
+                                <form method="get" action="/addabook.html">
+                                    <button type="submit" class="btn btn-success btn-margin" >Add a Book</button>
                                 </form>
-                                <!--{{/unless}} {{/each}}-->
                             </div>
                         </div>
                     </div>
@@ -55,12 +51,9 @@
                         <div class="panel panel-default">
                            <!-- <div class="panel-heading"></div>-->
                             <div class="panel-body buttonSection">
-                                <!--{{#each burger}} {{#if this.devoured}}-->
-                                <form action="/pickabook.html">
-                                    <input type="hidden" type="text" name="burger_id" value={{this.id}}>
-                                    <button type="submit" class='btn btn-warning btn-margin '>Pick a Book</button>
+                                <form method="get" action="/pickabook.html">
+                                    <button type="submit" class='btn btn-warning btn-margin' >Pick a Book</button>
                                 </form>
-                                <!--{{/if}} {{/each}}-->
                             </div>
                         </div>
                     </div>
