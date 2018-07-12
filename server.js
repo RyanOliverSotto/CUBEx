@@ -31,6 +31,7 @@ require("./routes/books-routes.js")(app);
 //require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
+// Toggle true | false for testing purposes
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
