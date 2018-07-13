@@ -89,20 +89,39 @@
                                                         <option value="29">Travel</option>                                                      
                                                 </select>                                                                                           
                                             </div>
-                                            <button id="addSubmit" type="submit" class="btn btn-primary btn-margin ">Add Book</button>
+                                            <button id="addSubmit" type="submit" class="btn btn-primary btn-margin" data-toggle="modal" data-target="#modal1">Add Book</button>
                                             </fieldset>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-
-
-
-
                 </div> <!--End Row-->
 
+                <!-- Modal -->
+                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Thank You For Your Contribution</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="bookTitle">Book Title:</label>
+                            <h1 id="bookTitle"></h5>
+                            <<label for="bookAuthor">Author:</label>
+                            <h2 id="bookAuthor"></h3>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
 
-        </div><!--End container -->
+</div>
+        <!--End container -->
                 <!--
                 <div class="row">
                 <div class="col-lg-12 text-center">
@@ -146,11 +165,13 @@ $(document).ready(function() {
             genre: $("#genre").val()
         }
 
-        console.log(newBook);
+        console.log("This is the NEw Book: ", newBook);
 
         var currentURL = window.location.origin;
         $.post(currentURL + "/api/addBook", newBook, function(data) {
-            console.log(data);
+            $("#bookTitle").text(data.title);
+            $("#bookAuthor").text(data.author);
+
         });
     });
 });
