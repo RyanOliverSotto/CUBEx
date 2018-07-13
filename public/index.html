@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8"> 
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -11,87 +12,74 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script> 
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
+
     <title>CUBEx</title>
 </head>
 
 <body>
-    <div class="container">
-    
-        <div class="well header">
+        <div class="jumbotron" id= "indexbg">
+            <div class="well header">
             
-                <h1 class="text-center"><img src="images/logos/logo06.jpg" alt="BookLogo"/>City Urban Book Exchange</h1>
-        </div>
-        <br/>
-        <div class="row">
-            <div class="col-sm-12 text-center">
-            <div class="well">Welcome! In partnership with the 49th Ward, American Library Association, and the CTA, CUBEx is proud to increase the knowledge of our Rogers Park 
-                neighbors at our many local kiosks one book at a time. We are a not for profit organization and have partnered with a team of full stack developers dedicated to creating, 
-                growing, and maintain the CUBEx website and kiosks. Our mission at CUBEx is simple, open books will open minds.
+                <div class="row">
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-4"><img src="images/logos/logo06.jpg" alt="BookLogo"/></div>
+                    <div class="col-sm-3"></div>
+                </div>
+                
+                <h1 id="jumboHeader"> Open Books Open Minds</h1>
             </div>
+
+            <br/>
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                <div class="well">Welcome! In partnership with the 49th Ward, American Library Association, and the CTA, CUBEx is proud to increase the knowledge of our Rogers Park 
+                        neighbors at our many local kiosks one book at a time. We are a not for profit organization and have partnered with a team of full stack developers dedicated to creating, 
+                        growing, and maintain the CUBEx website and kiosks. Our mission at CUBEx is simple, open books will open minds.
+                </div>
+                </div>
             </div>
         </div>
 
-                <div class="row">
-                    <div class="col-lg-6 text-center">
+            <div class="row">
+                <div class="col-sm-6 text-center">
                         <div class="panel panel-default">
                             <!--<div class="panel-heading"><h4>Recipes for preparation. Click to eat.</h4></div>-->
                             <div class="panel-body buttonSection">
-                                <!--{{#each burger}} {{#unless this.devoured}}-->
-                                <form action="/addabook.html">
-                                    <input type="hidden" type="text" name="burger_id" value={{this.id}}>
-                                    <!--<button type="submit" class='btn btn-success btn-margin '>{{this.burger_name}}</button>-->
-                                    <button type="submit" class='btn btn-success btn-margin '>Add a Book</button>
+                                <form method="get" action="/addabook.html">
+                                    <button type="submit" class="btn btn-success btn-margin btn-lg" >Add a Book</button>
                                 </form>
-                                <!--{{/unless}} {{/each}}-->
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
+                    <div class="col-sm-6 text-center">
                         <div class="panel panel-default">
-                           <!-- <div class="panel-heading"></div>-->
+                            <!-- <div class="panel-heading"></div>-->
                             <div class="panel-body buttonSection">
-                                <!--{{#each burger}} {{#if this.devoured}}-->
-                                <form action="/pickabook.html">
-                                    <input type="hidden" type="text" name="burger_id" value={{this.id}}>
-                                    <button type="submit" class='btn btn-warning btn-margin '>Pick a Book</button>
-                                </form>
-                                <!--{{/if}} {{/each}}-->
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div><!--
-                <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><h4>Add New Meal</h4></div>
-                        <div class="panel-body buttonSection">
-                            <form class="create-update-form" action="/" method="POST">
-                                <div class="form-group">
-                                    <label for="bu">Recipe Name:</label>
-                                    <input type="text" class="inline-block input-lg" name="burger_name">
-                                </div>
-                                <div class="form-group" class="radio-inline ">
-                                    <input type="radio" name="devoured" value="0" checked>Make this Meal
-                                    <input type="radio" name="devoured" value="1">Made this Meal
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-margin ">Add Meal</button>
+                                <form method="get" action="/pickabook.html">
+                                    <button type="submit" class='btn btn-warning btn-margin btn-lg' >Pick a Book</button>
                             </form>
                         </div>
                     </div>
-                </div>-->
-                <div class="row">
-                        <div class="col-lg-12 text-center">
-                        <div class="well footer">
-                            <img class="icon" src="images/icons/if_facebook.png" alt="Facebook"/>
-                            <img class="icon" src="images/icons/if_github.png" alt="GITHUB"/>
-                            <img class="icon" src="images/icons/if_linkedin.png" alt="LinkedIn"/>
-                            <img class="icon" src="images/icons/if_twitter.png" alt="Twitter"/>
-                        </div>
                 </div>
+            </div>  
+
+            <div class="row"></div>
+            
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <div class="well footer">
+                    <img class="icon" src="images/icons/if_facebook.png" alt="Facebook"/>
+                    <img class="icon" src="images/icons/if_github.png" alt="GITHUB"/>
+                    <img class="icon" src="images/icons/if_linkedin.png" alt="LinkedIn"/>
+                    <img class="icon" src="images/icons/if_twitter.png" alt="Twitter"/>
                 </div>
+            </div>
+    
 
 </body>
 
