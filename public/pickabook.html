@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css" type="text/css">
-
+    <script src="js/pick.js"></script>
     <title>CUBEx</title>
 </head>
-
 <body>
     <div class="container">
-
         <div class="well header">
-
             <h1 class="text-center">
                 <img src="images/logos/logo06.jpg" alt="BookLogo" />City Urban Book Exchange</h1>
         </div>
@@ -36,7 +33,7 @@
                                     <fieldset>
                                     <div class="form-group">
                                         <label for="location">Location:</label>
-                                        <select class="location">
+                                        <select class="location" id="location">
                                                 <option value="2">Howard</option>
                                                 <option value="3">Jarvis</option>
                                                 <option value="4">Lunt</option>
@@ -45,8 +42,8 @@
                                                 <option value="7">Granville</option>                                                        
                                         </select>
                                         <br/>
-                                        <label for="location">Genre:</label>
-                                        <select class="location">
+                                        <label for="genre">Genre:</label>
+                                        <select class="genre" id="genre">
                                                 <option value="0">Arts &amp Photography</option>
                                                 <option value="1">Biographies &amp Memoirs</option>
                                                 <option value="2">Business &amp Money</option>
@@ -79,7 +76,7 @@
                                                 <option value="29">Travel</option>                                                     
                                         </select>                                                                                           
                                     </div>
-                                    <!--<button type="submit" class="btn btn-primary btn-margin ">Add Book</button>-->
+                                    <button type="submit" id="fetch" class="btn btn-primary btn-margin ">Fetch</button>-->
                                     </fieldset>
                                 </form>
                             </div>
@@ -129,17 +126,13 @@
                                                     <img class="bookImg" src="http://ecx.images-amazon.com/images/I/41JMPeas0QL.jpg" alt="book">
                                                     <img class="bookImg" src="http://ecx.images-amazon.com/images/I/51EWkpwxRQL.jpg" alt="book">                                                                                                        
                                                 </div>
-
-                                                <button type="submit" class="btn btn-primary btn-margin ">Pick A Book</button>
+                                                <button type="submit" id="submit" class="btn btn-primary btn-margin ">Pick A Book</button>
                                                 </div>
                                                 </fieldset>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-
-
-
         </div> <!--End Row-->
             <br/>
         <div class="row" class="footer">
@@ -152,7 +145,5 @@
                 </div>
             </div>
         </div>
-
 </body>
-
 </html>

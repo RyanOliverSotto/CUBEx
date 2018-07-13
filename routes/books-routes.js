@@ -32,7 +32,10 @@ module.exports = function(app) {
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
   app.get("/api/catalog/books", function(req,res){
-    console.log("Getting books for kiosk location and genre");
+    //console.log("Getting books for kiosk location and genre" + JSON.parse(req[0]));
+    console.log("Location" + req.body.location);
+    console.log("Genre" + req.body.genre);
+
   });
 
   //POST route to add a book that a user wants to drop at a kiosk
