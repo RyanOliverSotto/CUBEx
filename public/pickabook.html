@@ -13,7 +13,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css" type="text/css">
-
+    <script src="js/pick.js"></script>
     <title>CUBEx</title>
 </head>
 
@@ -36,7 +36,7 @@
                                     <fieldset>
                                     <div class="form-group">
                                         <label for="location">Location:</label>
-                                        <select class="location">
+                                        <select class="location" id="location">
                                                 <option value="2">Howard</option>
                                                 <option value="3">Jarvis</option>
                                                 <option value="4">Lunt</option>
@@ -45,8 +45,8 @@
                                                 <option value="7">Granville</option>                                                        
                                         </select>
                                         <br/>
-                                        <label for="location">Genre:</label>
-                                        <select class="location">
+                                        <label for="genre">Genre:</label>
+                                        <select class="genre" id="genre">
                                                 <option value="0">Arts &amp Photography</option>
                                                 <option value="1">Biographies &amp Memoirs</option>
                                                 <option value="2">Business &amp Money</option>
@@ -79,7 +79,7 @@
                                                 <option value="29">Travel</option>                                                     
                                         </select>                                                                                           
                                     </div>
-                                    <!--<button type="submit" class="btn btn-primary btn-margin ">Add Book</button>-->
+                                    <button type="submit" id="fetch" class="btn btn-primary btn-margin ">Fetch</button>-->
                                     </fieldset>
                                 </form>
                             </div>
@@ -130,7 +130,7 @@
                                                     <img class="bookImg" src="http://ecx.images-amazon.com/images/I/51EWkpwxRQL.jpg" alt="book">                                                                                                        
                                                 </div>
 
-                                                <button type="submit" class="btn btn-primary btn-margin ">Pick A Book</button>
+                                                <button type="submit" id="submit" class="btn btn-primary btn-margin ">Pick A Book</button>
                                                 </div>
                                                 </fieldset>
                                             </form>
