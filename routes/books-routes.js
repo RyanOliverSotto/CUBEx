@@ -17,29 +17,17 @@ module.exports = function(app) {
     console.log("Calling get in location");
     db.Kiosk.findAll({})
       .then(function(dbKiosk) {
-<<<<<<< HEAD
-       res.json(dbKiosk);
-       console.log(dbKiosk);
-=======
         res.json(dbKiosk);
->>>>>>> 31e32fbc95e2ebd4627ec8df231908e7a108eabb
       });
   });
 
   //GET route for getting all genre
   app.get("/api/genre", function(req, res){
       console.log("Calling get in genre");
-<<<<<<< HEAD
-       db.Genre.findAll({})
-      .then(function(dbGenre){
-         res.json(dbGenre);
-       });
-=======
       db.Genre.findAll({})
       .then(function(dbGenre){
         res.json(dbGenre);
       });
->>>>>>> 31e32fbc95e2ebd4627ec8df231908e7a108eabb
   });
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
