@@ -31,12 +31,24 @@ module.exports = function(app) {
   });
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
-  app.get("/api/catalog/books", function(req,res){
-    //console.log("Getting books for kiosk location and genre" + JSON.parse(req[0]));
-    console.log("Location" + req.body.location);
-    console.log("Genre" + req.body.genre);
-
-  });
+  app.get("/api/catalog/books", function(req, res){
+    //console.log(req);
+    console.log("Location" + req.query.kioskid);
+    console.log("Genre" + req.query.genre);
+    db.Book.findAll({
+      where : {
+        kioskid: req.query.kioskid,
+        genreid: req.query.genre
+      }
+    }).then(function (data){
+        console.log(data);
+        res.status(200).json(data)
+      })
+      .catch(function (error) {
+        res.status(500).json(error)
+      });
+    }); //end of get method
+  
 
   //POST route to add a book that a user wants to drop at a kiosk
   app.post("/api/addBook", function(req, res) {
@@ -65,5 +77,5 @@ module.exports = function(app) {
         res.json(dbBook);
     });
   });
-
-} //end of app function
+} 
+  //end of app function

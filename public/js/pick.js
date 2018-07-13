@@ -8,12 +8,13 @@ $(function(){
         console.log ("Genre " + $("#genre").val());
     
         var searchObj = {
-            location: $("#location").val(),
+            kioskid: $("#location").val(),
             genre: $("#genre").val()
         }
-    
-        $.get("/api/catalog/books" , searchObj, function(data) {
-            console.log("Inside Get function");
+        
+        var currentURL = window.location.origin;
+        $.get(currentURL + "/api/catalog/books" , searchObj, function(data) {
+            
         });
     
         
