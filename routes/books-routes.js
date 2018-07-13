@@ -6,28 +6,29 @@
 // =============================================================
 
 // Requiring our Todo model
-//var db = require("../models");
+var db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
   // GET route for getting all of the Kiosk locations
-  app.get("/api/location/", function(req, res) {
+  app.get("/api/location", function(req, res) {
     console.log("Calling get in location");
-    // db.Kiosk.findAll({})
-    //   .then(function(dbKiosk) {
-    //     res.json(dbKiosk);
-    //   });
+    db.Kiosk.findAll({})
+      .then(function(dbKiosk) {
+       res.json(dbKiosk);
+       console.log(dbKiosk);
+      });
   });
 
   //GET route for getting all genre
   app.get("/api/genre", function(req, res){
       console.log("Calling get in genre");
-    //   db.Genre.findAll({})
-    //   .then(function(dbGenre){
-    //     res.json(dbGenre);
-    //   });
+       db.Genre.findAll({})
+      .then(function(dbGenre){
+         res.json(dbGenre);
+       });
   });
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
