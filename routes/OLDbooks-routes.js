@@ -17,18 +17,29 @@ module.exports = function(app) {
     console.log("Calling get in location");
     db.Kiosk.findAll({})
       .then(function(dbKiosk) {
+<<<<<<< HEAD
        res.json(dbKiosk);
        console.log(dbKiosk);
+=======
+        res.json(dbKiosk);
+>>>>>>> 31e32fbc95e2ebd4627ec8df231908e7a108eabb
       });
   });
 
   //GET route for getting all genre
   app.get("/api/genre", function(req, res){
       console.log("Calling get in genre");
+<<<<<<< HEAD
        db.Genre.findAll({})
       .then(function(dbGenre){
          res.json(dbGenre);
        });
+=======
+      db.Genre.findAll({})
+      .then(function(dbGenre){
+        res.json(dbGenre);
+      });
+>>>>>>> 31e32fbc95e2ebd4627ec8df231908e7a108eabb
   });
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
@@ -39,29 +50,29 @@ module.exports = function(app) {
   //POST route to add a book that a user wants to drop at a kiosk
   app.post("/api/addBook", function(req, res) {
     console.log("Calling Post method to add book");  
-    // console.log(req.body);
-    // db.Book.create({
-    //   title: req.body.title,
-    //   author: req.body.author,
-    //   location: req.body.location,
-    //   genre: req.body.genre
-    // })
-    //   .then(function(dbBook) {
-    //     res.json(dbBook);
-    //   });
+    console.log("API BACKEND: ", req.body);
+    db.Book.create({
+      KioskId: req.body.KioskId,
+      title: req.body.title,
+      author: req.body.author,
+      genre: req.body.genre
+    })
+      .then(function(dbBook) {
+        res.json(dbBook);
+      });
   });
 
   //delete route to delete the book when a user picks up the book
   app.delete("/api/pickBooks/:id", function(req, res){
       console.log("Deleting book from our table");
-    // db.Book.destroy({
-    //     where: {
-    //         id: request.params.id
-    //     }
-    // })
-    // .then(function(dbBook){
-    //     res.json(dbBook);
-    // });
+    db.Book.destroy({
+        where: {
+            id: request.params.id
+        }
+    })
+    .then(function(dbBook){
+        res.json(dbBook);
+    });
   });
 
 } //end of app function

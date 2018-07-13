@@ -14,6 +14,11 @@
         crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="./css/style.css" type="text/css">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+    <!--<script type="text/javascript" src="./js/addabook.js"></script>-->
+
+
     <title>CUBEx</title>
 </head>
 
@@ -22,7 +27,7 @@
     
         <div class="well header">
             
-                <h1 class="text-center"><img src="images/logos/logo01.jpg" alt="BookLogo"/>City Urban Book Exchange</h1>
+                <h1 class="text-center"><img src="/images/logos/logo01.JPG" alt="BookLogo"/>City Urban Book Exchange</h1>
         </div>
         <br/>
                 <div class="row">
@@ -35,7 +40,7 @@
                                             <fieldset>
                                             <div class="form-group">
                                                 <label for="location">Location:</label>
-                                                <select class="location">
+                                                <select id="location">
                                                         <option value="2">Howard</option>
                                                         <option value="3">Jarvis</option>
                                                         <option value="4">Lunt</option>
@@ -44,14 +49,19 @@
                                                         <option value="7">Granville</option>                                                        
                                                 </select>
                                                 <br/>
-                                                <label for="book">Title:</label>
-                                                <input type="text" class="inline-block input-lg book" name="title">
+                                                <label for="title">Title:</label>
+                                                <input id="titleInput" type="text" class="inline-block input-lg book" name="title">
                                                 <br/>
-                                                <label for="book">Author:</label>
-                                                <input type="text" class="inline-block input-lg author" name="author">    
+                                                <label for="author">Author:</label>
+                                                <input id="authorInput" type="text" class="inline-block input-lg author" name="author">    
                                                 <br/>
+<<<<<<< HEAD
                                                 <label for="genre">Genre:</label>
                                                 <select class="genre">
+=======
+                                                <label for="location">Genre:</label>
+                                                <select id="genre">
+>>>>>>> 31e32fbc95e2ebd4627ec8df231908e7a108eabb
                                                         <option value="0">Arts &amp Photography</option>
                                                         <option value="1">Biographies &amp Memoirs</option>
                                                         <option value="2">Business &amp Money</option>
@@ -84,7 +94,7 @@
                                                         <option value="29">Travel</option>                                                      
                                                 </select>                                                                                           
                                             </div>
-                                            <button type="submit" class="btn btn-primary btn-margin ">Add Book</button>
+                                            <button id="addSubmit" type="submit" class="btn btn-primary btn-margin ">Add Book</button>
                                             </fieldset>
                                         </form>
                                     </div>
@@ -121,13 +131,35 @@
                 <div class="row">
                         <div class="col-lg-12 text-center">
                         <div class="well footer">
-                            <img class="icon" src="images/icons/if_facebook.png" alt="Facebook"/>
-                            <img class="icon" src="images/icons/if_github.png" alt="GITHUB"/>
-                            <img class="icon" src="images/icons/if_linkedin.png" alt="LinkedIn"/>
-                            <img class="icon" src="images/icons/if_twitter.png" alt="Twitter"/>
+                            <img class="icon" src="./images/icons/if_facebook.png" alt="Facebook"/>
+                            <img class="icon" src="./images/icons/if_github.png" alt="GITHUB"/>
+                            <img class="icon" src="./images/icons/if_linkedin.png" alt="LinkedIn"/>
+                            <img class="icon" src="./images/icons/if_twitter.png" alt="Twitter"/>
                         </div>
                 </div>
                 </div>
+
+<script>
+$(document).ready(function() {
+    $("#addSubmit").on("click", function() {
+        event.preventDefault();
+
+        var newBook = {
+            KioskId: $("#location").val(),
+            title: $("#titleInput").val(),
+            author: $("#authorInput").val(),
+            genre: $("#genre").val()
+        }
+
+        console.log(newBook);
+
+        var currentURL = window.location.origin;
+        $.post(currentURL + "/api/addBook", newBook, function(data) {
+            console.log(data);
+        });
+    });
+});
+</script>
 
 </body>
 
