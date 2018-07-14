@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function() {
 
     // Capture the form inputs
      $("#fetch").on("click", function (event) {
@@ -23,10 +23,17 @@ $(function(){
                 bookDiv.append(bookImg);
                 $("#imgSection").prepend(bookImg);
             }
+
+            $(".bookImg").on("click", function() {
+                
+                if ($(this).hasClass("selected")) {
+                    $(this).removeClass("selected");
+                } else {
+                    $(this).addClass("selected");
+                }
+
+            });
         });
      }); //END SUBMIT ON CLICK
-    $(".bookImg").on("click", function() {
-        console.log("IT WORKS!!");
-    })
-    
     }); //END DOCUMENT READY
+
