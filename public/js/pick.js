@@ -15,10 +15,18 @@ $(function(){
         var currentURL = window.location.origin;
         $.get(currentURL + "/api/catalog/books" , searchObj, function(data) {
             
+            $("#imgSection").empty();
+
+            for (var i = 0; i < data.length; i++) { 
+                var bookDiv = $("<div>");
+                var bookImg = "<img class='bookImg' value='" + i + "' src=" + data[i].imgurl + " alt = 'book'>";
+                bookDiv.append(bookImg);
+                $("#imgSection").prepend(bookImg);
+            }
         });
-    
-        
      }); //END SUBMIT ON CLICK
-    
+    $(".bookImg").on("click", function() {
+        console.log("IT WORKS!!");
+    })
     
     }); //END DOCUMENT READY
