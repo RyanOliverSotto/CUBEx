@@ -30,6 +30,7 @@ $(document).ready(function() {
                     $(this).removeClass("selected");
                 } else {
                     $(this).addClass("selected");
+                    
                 }
 
             });
