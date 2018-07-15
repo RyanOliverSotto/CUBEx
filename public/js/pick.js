@@ -19,17 +19,20 @@ $(document).ready(function() {
 
             for (var i = 0; i < data.length; i++) { 
                 var bookDiv = $("<div>");
-                var bookImg = "<img class='bookImg' value='" + i + "' src=" + data[i].imgurl + " alt = 'book'>";
+                var bookImg = "<img class='bookImg' value='" + data[i].id + "' src=" + data[i].imgurl + " alt = 'book'>";
                 bookDiv.append(bookImg);
                 $("#imgSection").prepend(bookImg);
+                console.log(data[i]);
             }
 
             $(".bookImg").on("click", function() {
-                
+                console.log($(this).attr("value"));
+
                 if ($(this).hasClass("selected")) {
                     $(this).removeClass("selected");
                 } else {
                     $(this).addClass("selected");
+                    $("#imgSelect").prepend($(this));
                     
                 }
 
