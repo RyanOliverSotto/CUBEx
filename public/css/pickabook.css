@@ -1,0 +1,28 @@
+body {
+    margin-top: 100px;
+    background-image: url("../images/addbook.jpeg");
+    background-size: cover;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+.btn{
+    margin: 10px 10px 10px 10px;
+}
+
+.icon{
+    margin-top:10px;
+    height: 50px;
+    width: 50px;
+}
+
+.form-group{
+    text-align: center;
+}
+
+.selected {
+    opacity: .5;
+}

@@ -8,6 +8,9 @@
 // Requiring our Todo model
 var db = require("../models");
 
+var booksSearch = require('google-books-search');
+
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -33,15 +36,15 @@ module.exports = function(app) {
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
   app.get("/api/catalog/books", function(req, res){
     //console.log(req);
-    console.log("Location" + req.query.kioskid);
-    console.log("Genre" + req.query.genre);
+    // console.log("Location" + req.query.kioskid);
+    // console.log("Genre" + req.query.genre);
     db.Book.findAll({
       where : {
         kioskid: req.query.kioskid,
         genreid: req.query.genre
       }
     }).then(function (data){
-        console.log(data);
+        //console.log(data);
         res.status(200).json(data)
       })
       .catch(function (error) {
@@ -49,19 +52,29 @@ module.exports = function(app) {
       });
     }); //end of get method
   
-
+  var titleBook = "";
   //POST route to add a book that a user wants to drop at a kiosk
   app.post("/api/addBook", function(req, res) {
     console.log("Calling Post method to add book");  
     console.log("API BACKEND: ", req.body);
+    titleBook = req.body.title;
     db.Book.create({
       KioskId: req.body.KioskId,
       title: req.body.title,
       author: req.body.author,
-      genre: req.body.genre
+      Genreid: req.body.genre
     })
       .then(function(dbBook) {
         res.json(dbBook);
+        //Get the image of the Book the user has added from GOOGLE BOOK API using Google book search npm package
+        booksSearch.search(titleBook,function(error, results){
+          if ( ! error ) {
+            console.log(results[0]);
+            //console.log(results);
+          } else {
+            console.log(error);
+          }
+        });
       });
   });
 
