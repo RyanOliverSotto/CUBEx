@@ -35,16 +35,16 @@ module.exports = function(app) {
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
   app.get("/api/catalog/books", function(req, res){
-    //console.log(req);
-    // console.log("Location" + req.query.kioskid);
-    // console.log("Genre" + req.query.genre);
+      //console.log(req);
+      //console.log("Location" + req.query.kioskid);
+      //console.log("Genre" + req.query.genre);
     db.Book.findAll({
       where : {
         kioskid: req.query.kioskid,
         genreid: req.query.genre
       }
     }).then(function (data){
-        //console.log(data);
+        console.log(data);
         res.status(200).json(data)
       })
       .catch(function (error) {
@@ -62,7 +62,7 @@ module.exports = function(app) {
       KioskId: req.body.KioskId,
       title: req.body.title,
       author: req.body.author,
-      Genreid: req.body.genre
+      GenreId: req.body.genre
     })
       .then(function(dbBook) {
         res.json(dbBook);
