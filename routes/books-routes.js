@@ -16,7 +16,7 @@ var booksSearch = require('google-books-search');
 module.exports = function(app) {
 
   // GET route for getting all of the Kiosk locations
-  app.get("/api/location/", function(req, res) {
+  app.get("/api/location", function(req, res) {
     console.log("Calling get in location");
     db.Kiosk.findAll({})
       .then(function(dbKiosk) {
@@ -35,16 +35,16 @@ module.exports = function(app) {
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
   app.get("/api/catalog/books", function(req, res){
-    //console.log(req);
-    // console.log("Location" + req.query.kioskid);
-    // console.log("Genre" + req.query.genre);
+      //console.log(req);
+      //console.log("Location" + req.query.kioskid);
+      //console.log("Genre" + req.query.genre);
     db.Book.findAll({
       where : {
         kioskid: req.query.kioskid,
         genreid: req.query.genre
       }
     }).then(function (data){
-        //console.log(data);
+        console.log(data);
         res.status(200).json(data)
       })
       .catch(function (error) {
@@ -84,10 +84,10 @@ module.exports = function(app) {
 
   //delete route to delete the book when a user picks up the book
   app.delete("/api/pickBooks/:id", function(req, res){
-      console.log("Deleting book from our table");
+    console.log("Deleting book from our table");
     db.Book.destroy({
         where: {
-            id: request.params.id
+            id: req.params.id
         }
     })
     .then(function(dbBook){

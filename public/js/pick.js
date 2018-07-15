@@ -16,27 +16,49 @@ $(document).ready(function() {
         $.get(currentURL + "/api/catalog/books" , searchObj, function(data) {
             
             $("#imgSection").empty();
-
+            $("#imgSelect").empty();
+            
             for (var i = 0; i < data.length; i++) { 
                 var bookDiv = $("<div>");
-                var bookImg = "<img class='bookImg' value='" + data[i].id + "' src=" + data[i].imgurl + " alt = 'book'>";
+                var bookImg = "<img class='bookImg' value='" + i + "' src=" + data[i].imgurl + "id='" + data[i].id + "' alt = 'book'>";
                 bookDiv.append(bookImg);
                 $("#imgSection").prepend(bookImg);
-                console.log(data[i]);
+                //console.log(`Data ${data}`);
             }
 
             $(".bookImg").on("click", function() {
                 console.log($(this).attr("value"));
 
-                if ($(this).hasClass("selected")) {
+                if ($(this).hasClass("selected"))
+                 {
                     $(this).removeClass("selected");
-                } else {
+                    $("#imgSection").prepend($(this));
+                } 
+                else 
+                {
                     $(this).addClass("selected");
                     $("#imgSelect").prepend($(this));
                     
                 }
-
+                //console.log("ID: " + $(this).attr("id"));
+                $(".selected").each(function(){
+                    console.log("ID: " + $(this).attr('id'));
+                });
             });
+
+            $("#delete").on("click",function(){
+                event.preventDefault();
+                var currentURL = window.location.origin;
+                $(".selected").each(function(){
+                    console.log("ID: " + $(this).attr('id'));
+                    //var id = $(this.attr('id'));               
+                    //$.post(currentURL + "api/delete",id, function(data) {
+                    //console.log(data);
+                })
+
+                
+            });
+
         });
      }); //END SUBMIT ON CLICK
     }); //END DOCUMENT READY
