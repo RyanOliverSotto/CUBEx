@@ -84,10 +84,10 @@ module.exports = function(app) {
 
   //delete route to delete the book when a user picks up the book
   app.delete("/api/pickBooks/:id", function(req, res){
-      console.log("Deleting book from our table");
+    console.log("Deleting book from our table");
     db.Book.destroy({
         where: {
-            id: request.params.id
+            id: req.params.id
         }
     })
     .then(function(dbBook){

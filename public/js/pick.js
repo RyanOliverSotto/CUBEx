@@ -16,6 +16,7 @@ $(document).ready(function() {
         $.get(currentURL + "/api/catalog/books" , searchObj, function(data) {
             
             $("#imgSection").empty();
+            $("#imgSelect").empty();
             
             for (var i = 0; i < data.length; i++) { 
                 var bookDiv = $("<div>");
@@ -39,7 +40,7 @@ $(document).ready(function() {
                     $("#imgSelect").prepend($(this));
                     
                 }
-                console.log("ID: " + $(this).attr("id"));
+                //console.log("ID: " + $(this).attr("id"));
                 $(".selected").each(function(){
                     console.log("ID: " + $(this).attr('id'));
                 });
