@@ -55,6 +55,10 @@ module.exports = function(app) {
   var titleBook = "";
   //POST route to add a book that a user wants to drop at a kiosk
   app.post("/api/addBook", function(req, res) {
+
+    console.log('this is db.book !!!!!!!', db.Book)
+
+
     console.log("Calling Post method to add book");  
     console.log("API BACKEND: ", req.body);
     titleBook = req.body.title;
@@ -62,7 +66,7 @@ module.exports = function(app) {
       KioskId: req.body.KioskId,
       title: req.body.title,
       author: req.body.author,
-      Genreid: req.body.genre
+      GenreId: req.body.genre
     })
       .then(function(dbBook) {
         res.json(dbBook);
