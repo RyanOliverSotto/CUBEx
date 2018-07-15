@@ -26,11 +26,13 @@ $(document).ready(function() {
             }
 
             $(".bookImg").on("click", function() {
-                
+                console.log($(this).attr("value"));
+
                 if ($(this).hasClass("selected")) {
                     $(this).removeClass("selected");
                 } else {
                     $(this).addClass("selected");
+                    $("#imgSelect").prepend($(this));
                     
                 }
                 console.log("ID: " + $(this).attr('id'));
