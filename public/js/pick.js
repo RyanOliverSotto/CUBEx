@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    var arrayId = [];
     // Capture the form inputs
      $("#fetch").on("click", function (event) {
         event.preventDefault();
@@ -27,7 +27,7 @@ $(document).ready(function() {
             }
 
             $(".bookImg").on("click", function() {
-                console.log($(this).attr("value"));
+                //console.log($(this).attr("value"));
 
                 if ($(this).hasClass("selected"))
                  {
@@ -43,18 +43,31 @@ $(document).ready(function() {
                 //console.log("ID: " + $(this).attr("id"));
                 $(".selected").each(function(){
                     console.log("ID: " + $(this).attr('id'));
+                    
                 });
             });
 
             $("#delete").on("click",function(){
-                event.preventDefault();
+                //event.preventDefault();
                 var currentURL = window.location.origin;
                 $(".selected").each(function(){
                     console.log("ID: " + $(this).attr('id'));
-                    //var id = $(this.attr('id'));               
+                    var id = $(this).attr('id');              
+                  
+                    $.ajax({
+                        method: "DELETE",
+                        url: "/api/pickbooks/" + id
+                      })
+                        .then(function() {
+                          console.log("It Worked!");
+                         // $(this).attr('id').remove();
+                        });
+
+                  
                     //$.post(currentURL + "api/delete",id, function(data) {
                     //console.log(data);
                 })
+                $("#imgSelect").empty();
 
                 
             });
