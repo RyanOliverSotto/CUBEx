@@ -1,5 +1,5 @@
-function getKioskLocation(){
-    console.log("Inside getKioskLocation");
+//function getKioskLocation(){
+//    console.log("Inside getKioskLocation");
     // $.get("/api/location/", function(data){
     //     for(var i=0; i > data.length; i++){
     //         var option = $("<option value =" + data[i].id);
