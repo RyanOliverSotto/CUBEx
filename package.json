@@ -21,6 +21,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "google-books-catalogue-search": "^0.1.4",
     "google-books-search": "^0.3.1",
     "handlebars": "^4.0.11",
     "mysql": "^2.15.0",

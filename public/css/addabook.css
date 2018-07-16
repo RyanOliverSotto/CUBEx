@@ -3,6 +3,14 @@ body {
     background-size: cover;
 }
 
+.create-update-form{
+    text-align: center;
+}
+
+label{
+    color: white;
+}
+
 #logo {
     margin-top: 100px;
     height: 250px;
@@ -14,6 +22,10 @@ body {
 img{
     height: 100px;
     width: 100px;
+}
+
+.panel-heading{
+    color: white;
 }
 
 .btn{

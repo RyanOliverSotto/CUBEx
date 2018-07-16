@@ -9,6 +9,7 @@
 var db = require("../models");
 
 var booksSearch = require('google-books-search');
+var booksSearch1 = require('google-books-catalogue-search');
 
 
 // Routes
@@ -56,38 +57,35 @@ module.exports = function(app) {
   //POST route to add a book that a user wants to drop at a kiosk
   app.post("/api/addBook", function(req, res) {
 
-    console.log('this is db.book !!!!!!!', db.Book)
-
-
-    console.log("Calling Post method to add book");  
-    console.log("API BACKEND: ", req.body);
     titleBook = req.body.title;
-    db.Book.create({
-      KioskId: req.body.KioskId,
-      title: req.body.title,
-      author: req.body.author,
-      GenreId: req.body.genre
-    })
-      .then(function(dbBook) {
-        res.json(dbBook);
-        //Get the image of the Book the user has added from GOOGLE BOOK API using Google book search npm package
-        booksSearch.search(titleBook,function(error, results){
-          if ( ! error ) {
-            console.log(results[0]);
-            //console.log(results);
-          } else {
-            console.log(error);
-          }
-        });
-      });
+    var imageURL = "";
+    booksSearch1.search(titleBook, function(error, results){
+      imageURL = results[0].imageLinks.smallThumbnail;
+      console.log(imageURL);
+      if(error){
+        console.error(error);
+      }
+      else{
+        db.Book.create({
+          KioskId: req.body.KioskId,
+          title: req.body.title,
+          author: req.body.author,
+          GenreId: req.body.genre,
+          imgurl: imageURL
+        })
+          .then(function(dbBook) {
+            res.json(dbBook);
+          });
+      } //end of else
+    });
   });
 
   //delete route to delete the book when a user picks up the book
   app.delete("/api/pickBooks/:id", function(req, res){
-      console.log("Deleting book from our table");
+    console.log("Deleting book from our table");
     db.Book.destroy({
         where: {
-            id: request.params.id
+            id: req.params.id
         }
     })
     .then(function(dbBook){
