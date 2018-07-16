@@ -17,7 +17,7 @@ var booksSearch1 = require('google-books-catalogue-search');
 module.exports = function(app) {
 
   // GET route for getting all of the Kiosk locations
-  app.get("/api/location/", function(req, res) {
+  app.get("/api/location", function(req, res) {
     console.log("Calling get in location");
     db.Kiosk.findAll({})
       .then(function(dbKiosk) {
@@ -36,16 +36,16 @@ module.exports = function(app) {
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
   app.get("/api/catalog/books", function(req, res){
-    //console.log(req);
-    // console.log("Location" + req.query.kioskid);
-    // console.log("Genre" + req.query.genre);
+      //console.log(req);
+      //console.log("Location" + req.query.kioskid);
+      //console.log("Genre" + req.query.genre);
     db.Book.findAll({
       where : {
         kioskid: req.query.kioskid,
         genreid: req.query.genre
       }
     }).then(function (data){
-        //console.log(data);
+        console.log(data);
         res.status(200).json(data)
       })
       .catch(function (error) {
