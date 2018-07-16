@@ -62,7 +62,7 @@ module.exports = function(app) {
       KioskId: req.body.KioskId,
       title: req.body.title,
       author: req.body.author,
-      Genreid: req.body.genre
+      GenreId: req.body.genre
     })
       .then(function(dbBook) {
         res.json(dbBook);
