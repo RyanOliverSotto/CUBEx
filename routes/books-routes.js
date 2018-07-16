@@ -35,16 +35,16 @@ module.exports = function(app) {
 
   //GET route for getting available books where location=req.body.location and genre = req.body.genre
   app.get("/api/catalog/books", function(req, res){
-    //console.log(req);
-    // console.log("Location" + req.query.kioskid);
-    // console.log("Genre" + req.query.genre);
+      //console.log(req);
+      //console.log("Location" + req.query.kioskid);
+      //console.log("Genre" + req.query.genre);
     db.Book.findAll({
       where : {
         kioskid: req.query.kioskid,
         genreid: req.query.genre
       }
     }).then(function (data){
-        //console.log(data);
+        console.log(data);
         res.status(200).json(data)
       })
       .catch(function (error) {
@@ -55,6 +55,10 @@ module.exports = function(app) {
   var titleBook = "";
   //POST route to add a book that a user wants to drop at a kiosk
   app.post("/api/addBook", function(req, res) {
+
+    console.log('this is db.book !!!!!!!', db.Book)
+
+
     console.log("Calling Post method to add book");  
     console.log("API BACKEND: ", req.body);
     titleBook = req.body.title;
@@ -80,10 +84,10 @@ module.exports = function(app) {
 
   //delete route to delete the book when a user picks up the book
   app.delete("/api/pickBooks/:id", function(req, res){
-      console.log("Deleting book from our table");
+    console.log("Deleting book from our table");
     db.Book.destroy({
         where: {
-            id: request.params.id
+            id: req.params.id
         }
     })
     .then(function(dbBook){

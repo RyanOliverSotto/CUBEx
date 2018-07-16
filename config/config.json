@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "J0sh85Ni",
+=======
+    "password": "password",
+>>>>>>> dev
     "database": "Cubex_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
