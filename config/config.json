@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "Cubex_db",
-    "host": "127.0.0.1",
+    "username": "opkw29ucnb0p52o3",
+    "password": "ib002cu58l15fwas",
+    "database": "txo5xoanaigs5lub",
+    "host": "tyduzbv3ggpf15sx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "port": 3306
   },
