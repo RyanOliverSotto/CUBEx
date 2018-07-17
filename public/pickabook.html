@@ -23,6 +23,10 @@
     <title>Pick A Book</title>
 </head>
 <body>
+<div class="container">
+    <img id="logo" src="./images/logos/logo01.JPG">
+   <hr>
+
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Pick A Book</h3>
@@ -84,11 +88,36 @@
     </div> <!-- Panel End Div-->
 
     <div id="buttons">
-        <button type="submit" id="fetch" class="btn btn-primary btn-margin ">Fetch</button>
+        <button id="pickHome" class="btn btn-primary btn-margin"><span class="glyphicon glyphicon-home"></span> <a href="/">Home</a></span></button>
+        <button type="submit" id="fetch" class="btn btn-primary btn-margin "><span class="glyphicon glyphicon-search"></span>Fetch</button>
         <button type="submit" id="bookSelectedBTN" class="btn btn-primary btn-margin ">Go To Book Selected</button>
         <button type="submit" id="showBooksBTN" class="btn btn-primary btn-margin ">Go To Books List</button>
     </div>
 
+    <br>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Instructions</h3>
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li>1) Select A Location and Genre.</li>
+                <li>2) Click Fetch!</li>
+                <li>3) Pick Which Books You Would Like to Check Out.</li>
+                <li>4) To View Selected Books Click "Go To Book List"</li>
+                <li>5) If Done Searching Click "Pick up Book"</li>
+                <li>6) Your Book is Now Ready For You To Pick Up</li>
+            </ul>
+        </div>
+    </div>
+    
+    <br>
+    
+    <div id=delete>
+        <button type="submit" class="btn btn-primary btn-margin ">Pick Up Book(s)</button>
+    </div>
+    
     <br>
         
     <div id="books" class="panel panel-default">
@@ -108,6 +137,7 @@
             <div id="imgSelect"></div>
         </div>
     </div>
+</div>
               
 </body>
 </html>

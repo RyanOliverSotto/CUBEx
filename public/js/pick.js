@@ -3,6 +3,7 @@ $(document).ready(function() {
     $("#booksSelected").hide();
     $("#showBooksBTN").hide();
     $("#bookSelectedBTN").hide();
+    $("#delete").hide();
 
     var arrayId = [];
     // Capture the form inputs
@@ -54,6 +55,7 @@ $(document).ready(function() {
                 $("#booksSelected").show();
                 $("#bookSelectedBTN").hide();
                 $("#showBooksBTN").show();
+                $("#delete").show();
             });
 
             $("#showBooksBTN").on("click", function() {
@@ -61,6 +63,7 @@ $(document).ready(function() {
                 $("#bookSelectedBTN").show();
                 $("#booksSelected").hide();
                 $("#books").show();
+                $("#delete").hide();
             });
 
 

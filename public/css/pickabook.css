@@ -12,8 +12,12 @@ body {
 }
 
 .panel-body {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
     text-align: left;
-    padding-left: 25%;
 }
 
 .location {
@@ -29,9 +33,20 @@ body {
     width: 50px;
 }
 
-.fetch {
+#buttons {
+    text-align: center;
 }
 
-#buttons {
+a {
+    color: white;
+}
+
+#logo {
+    height: 250px;
+    width: 100%;
+    opacity: .9;
+}
+
+#delete {
     text-align: center;
 }
