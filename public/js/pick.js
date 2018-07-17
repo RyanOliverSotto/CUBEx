@@ -1,8 +1,15 @@
 $(document).ready(function() {
+
+    $("#booksSelected").hide();
+    $("#showBooksBTN").hide();
+    $("#bookSelectedBTN").hide();
+
     var arrayId = [];
     // Capture the form inputs
      $("#fetch").on("click", function (event) {
         event.preventDefault();
+
+        $("#bookSelectedBTN").show();
     
         console.log ("Location " + $("#location").val());
         console.log ("Genre " + $("#genre").val());
@@ -40,12 +47,22 @@ $(document).ready(function() {
                     $("#imgSelect").prepend($(this));
                     
                 }
-                //console.log("ID: " + $(this).attr("id"));
-                $(".selected").each(function(){
-                    console.log("ID: " + $(this).attr('id'));
-                    
-                });
             });
+
+            $("#bookSelectedBTN").on("click", function () {
+                $("#books").hide();
+                $("#booksSelected").show();
+                $("#bookSelectedBTN").hide();
+                $("#showBooksBTN").show();
+            });
+
+            $("#showBooksBTN").on("click", function() {
+                $("#showBooksBTN").hide();
+                $("#bookSelectedBTN").show();
+                $("#booksSelected").hide();
+                $("#books").show();
+            });
+
 
             $("#delete").on("click",function(){
                 //event.preventDefault();
@@ -69,7 +86,6 @@ $(document).ready(function() {
                 })
                 $("#imgSelect").empty();
 
-                
             });
 
         });
