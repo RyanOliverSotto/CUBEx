@@ -1,43 +1,59 @@
 body {
-    background-image: url("../images/addbook.jpeg");
-    background-size: cover;
+    background-image: url("../images/mainbg.jpg");
+    margin-top: 5%;
 }
 
-.create-update-form{
+.panel {
+    background-color: tan;
+    opacity: .7;
+}
+
+.panel-title {
     text-align: center;
 }
 
-label{
+.panel-body {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.location {
+    background-color: white;
+}
+
+.genre {
+    background-color: white;
+}
+
+.bookImg {
+    height: 100px;
+    width: 50px;
+}
+
+#buttons {
+    text-align: center;
+}
+
+a {
     color: white;
 }
 
 #logo {
-    margin-top: 100px;
-    height: 250px;
-    width: 250px;
-    opacity: .7;
-    border-radius: 25px;
+    height: 20%;
+    width: 100%;
+    opacity: .9;
+    border-radius: 15%;
 }
 
-img{
-    height: 100px;
-    width: 100px;
+#delete {
+    text-align: center;
 }
 
-.panel-heading{
-    color: white;
-}
-
-.btn{
-    margin: 10px 10px 10px 10px;
-}
-
-.icon{
-    margin-top:10px;
+.icon {
     height: 50px;
     width: 50px;
-}
-
-.form-group{
-    text-align: center;
 }

@@ -4,43 +4,82 @@
 <head>
     <meta charset="UTF-8"> 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-        crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script> 
-    <link rel="stylesheet" href="./css/index.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
+    
 
     <title>CUBEx</title>
 </head>
+    <body>
+        <div class="container">
+            <div>
+                <img id="logo" src="images/logos/logo01.jpg" alt="BookLogo"/>
+            </div>
 
-<body>
-    <!-- <div class="jumbotron" id= "indexbg"> -->
-        <div class="well header">
+        </div>
         
-            <div class="row logo">
-                <div class="col-sm-5"></div>
-                <div class="col-sm-4"><img src="images/logos/logo01.jpg" alt="BookLogo"/></div>
-                <div class="col-sm-3"></div>
+        <div class="container" id="buttons">
+            <hr color="white">
+
+            <button id="pickHome" class="btn btn-primary btn-margin btn-lg"><span class="
+                glyphicon glyphicon-plus"></span> <a href="/addbook">Add a Book</a></span></button>
+            <button id="pickABook" class="btn btn-primary btn-margin btn-lg"><span class="glyphicon glyphicon-search"></span><a href="/pickabook">Pick a Book</a></button>
+            
+            <br>
+            <hr color="white">
+        </div>
+
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> About Us</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 id="statement">Open Books Open Minds</h1>
+                    <hr>
+                    <p>Welcome! In partnership with the 49th Ward, American Library Association, and the CTA, CUBEx is proud to increase the knowledge of our Rogers Park 
+                       neighbors at our many local kiosks one book at a time. We are a not for profit organization and have partnered with a team of full stack developers dedicated to creating, 
+                       growing, and maintain the CUBEx website and kiosks. Our mission at CUBEx is simple, open books will open minds.</p>
+                </div>
             </div>
         </div>
-    </div>
+
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Contact Us</h3>
+                </div>
+                <div class="panel-body">
+                    <img class="icon" src="images/icons/if_facebook.png" alt="Facebook"/>
+                    <img class="icon" src="images/icons/if_github.png" alt="GITHUB"/>
+                    <img class="icon" src="images/icons/if_linkedin.png" alt="LinkedIn"/>
+                    <img class="icon" src="images/icons/if_twitter.png" alt="Twitter"/>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
+
     
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-sm-12">
             <h1 id="jumboHeader"> Open Books Open Minds</h1>
         </div>
-    <!-- </div> -->
+    </div>
 
-    <hr color="orange">
+    <hr color="orange"> -->
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-sm-12 text-center well about">
             <p>Welcome! In partnership with the 49th Ward, American Library Association, and the CTA, CUBEx is proud to increase the knowledge of our Rogers Park 
             neighbors at our many local kiosks one book at a time. We are a not for profit organization and have partnered with a team of full stack developers dedicated to creating, 
@@ -48,13 +87,12 @@
         </div>
     </div>
 
-    <hr color="orange">
+    <hr color="orange"> -->
 
-    <div class="container">
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-sm-6 text-center">
                     <div class="panel panel-default">
-                        <!--<div class="panel-heading"><h4>Recipes for preparation. Click to eat.</h4></div>-->
+                        <div class="panel-heading"><h4>Recipes for preparation. Click to eat.</h4></div>
                         <div class="panel-body buttonSection">
                             <a href="/addbook" class="btn btn-success btn-margin btn-lg" >Add a Book</a>
                         </div>
@@ -62,16 +100,15 @@
                 </div>
                 <div class="col-sm-6 text-center">
                     <div class="panel panel-default">
-                        <!-- <div class="panel-heading"></div>-->
+                         <div class="panel-heading"></div>
                         <div class="panel-body buttonSection">
                             <a href="/pickabook" class='btn btn-warning btn-margin btn-lg' >Pick a Book</a>
                     </div>
                 </div>
             </div>
-        </div>  
-    </div>      
+        </div>    -->
 
-    <div class="row"></div>
+
         
     <!-- <div class="row">
         <div class="col-lg-12 text-center">
@@ -82,6 +119,3 @@
             <img class="icon" src="images/icons/if_twitter.png" alt="Twitter"/>
         </div>
     </div> -->
-</body>
-
-</html>

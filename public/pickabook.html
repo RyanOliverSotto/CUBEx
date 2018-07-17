@@ -31,21 +31,16 @@
         <div class="panel-heading">
             <h3 class="panel-title">Pick A Book</h3>
         </div>
-
         <div class="panel-body">
-            <div class="row">
-                <div class="col-sm-12">
-                    <label for="location">Location:</label>
-                    <select class="location" id="location">
-                            <option value="2">Howard</option>
-                            <option value="3">Jarvis</option>
-                            <option value="4">Lunt</option>
-                            <option value="5">Morse</option>
-                            <option value="6">Loyola</option>
-                            <option value="7">Granville</option>                                                        
-                    </select>
-                </div>
-            </div>
+            <label for="location">Location:</label>
+            <select class="location" id="location">
+                    <option value="2">Howard</option>
+                    <option value="3">Jarvis</option>
+                    <option value="4">Lunt</option>
+                    <option value="5">Morse</option>
+                    <option value="6">Loyola</option>
+                    <option value="7">Granville</option>                                                        
+            </select>
             
             <div class="row">
                 <div class="col-sm-12">
@@ -87,11 +82,13 @@
         </div> <!-- Panel Body Div-->
     </div> <!-- Panel End Div-->
 
+<div class="container">
     <div id="buttons">
-        <button id="pickHome" class="btn btn-primary btn-margin"><span class="glyphicon glyphicon-home"></span> <a href="/">Home</a></span></button>
-        <button type="submit" id="fetch" class="btn btn-primary btn-margin "><span class="glyphicon glyphicon-search"></span>Fetch</button>
-        <button type="submit" id="bookSelectedBTN" class="btn btn-primary btn-margin ">Go To Book Selected</button>
-        <button type="submit" id="showBooksBTN" class="btn btn-primary btn-margin ">Go To Books List</button>
+        <button id="pickHome" class="btn btn-primary btn-margin btn-lg"><span class="glyphicon glyphicon-home"></span> <a href="/">Home</a></span></button>
+        <button id="pickHome" class="btn btn-primary btn-margin btn-lg"><span class="glyphicon glyphicon-plus"></span> <a href="/addbook">Add a Book</a></span></button>
+        <button type="submit" id="fetch" class="btn btn-primary btn-margin btn-lg"><span class="glyphicon glyphicon-search"></span>Fetch</button>
+        <button type="submit" id="bookSelectedBTN" class="btn btn-primary btn-margin btn-lg">Go To Book Selected</button>
+        <button type="submit" id="showBooksBTN" class="btn btn-primary btn-margin btn-lg">Go To Books List</button>
     </div>
 
     <br>
@@ -112,14 +109,14 @@
         </div>
     </div>
     
-    <br>
-    
-    <div id=delete>
-        <button type="submit" class="btn btn-primary btn-margin ">Pick Up Book(s)</button>
+    <div id="delete">
+        <button type="submit" class="btn btn-primary btn-margin btn-lg" data-toggle="modal" data-target="#exampleModalLong">Pick Up Book(s)</button>
     </div>
-    
+
     <br>
-        
+</div>
+    
+<div class="container">
     <div id="books" class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Books</h3>
@@ -138,6 +135,46 @@
         </div>
     </div>
 </div>
-              
+
+<!-- MODAL -->
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Checkout</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <h1>Books Are Ready To Get Picked Up!</h1>
+                <div id="bookList"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"><a href="/addbook"> Click Here To Add a Book</a></button>
+              <button type="button" class="btn btn-primary"><a href="/pickabook"> Click To Get More Books</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+            <hr>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Contact Us</h3>
+                </div>
+                <div class="panel-body">
+                    <img class="icon" src="images/icons/if_facebook.png" alt="Facebook"/>
+                    <img class="icon" src="images/icons/if_github.png" alt="GITHUB"/>
+                    <img class="icon" src="images/icons/if_linkedin.png" alt="LinkedIn"/>
+                    <img class="icon" src="images/icons/if_twitter.png" alt="Twitter"/>
+                </div>
+            </div>
+    </div>
 </body>
 </html>

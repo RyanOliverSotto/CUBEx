@@ -11,9 +11,10 @@ $(document).ready(function() {
         event.preventDefault();
 
         $("#bookSelectedBTN").show();
+        $("#showBooksBTN").hide();
     
-        console.log ("Location " + $("#location").val());
-        console.log ("Genre " + $("#genre").val());
+        // console.log ("Location " + $("#location").val());
+        // console.log ("Genre " + $("#genre").val());
     
         var searchObj = {
             kioskid: $("#location").val(),
@@ -72,7 +73,7 @@ $(document).ready(function() {
                 var currentURL = window.location.origin;
                 $(".selected").each(function(){
                     console.log("ID: " + $(this).attr('id'));
-                    var id = $(this).attr('id');              
+                    var id = $(this).attr('id');  
                   
                     $.ajax({
                         method: "DELETE",
